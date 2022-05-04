@@ -1,9 +1,3 @@
 # Poudlard
-
-
-
 <hr/>
-
-
-
-Poudlard
+Poudlardo

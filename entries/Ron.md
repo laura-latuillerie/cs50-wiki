@@ -1,5 +1,1 @@
-# Ron
-
-<hr/>
-
-Ron
+# Ron

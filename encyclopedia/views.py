@@ -11,9 +11,9 @@ from . import util
 # Form to CREATE an entry (will be the EDIT form also)
 class NewEntryForm(forms.Form):
     title = forms.CharField(widget=forms.TextInput(attrs=
-        {'placeholder': 'Title of your entry', 'class': 'form-control', 'style' : 'width : 90%'}))
+        {'placeholder': 'Title of your entry', 'class': 'form-control', 'style' : 'width : 90%'}), required=True)
     entry = forms.CharField(widget=forms.Textarea(attrs=
-        {'placeholder': 'Content (Markdown) : Start with a # Title', 'rows':20, 'class': 'form-control', 'style' : 'width : 90%'}))
+        {'placeholder': 'Content (Markdown) : Start with a # Title', 'rows':20, 'class': 'form-control', 'style' : 'width : 90%'}), required=True)
 #
 # Form to SEARCH within entries
 class SearchForm(forms.Form):
@@ -87,7 +87,7 @@ def create_page(request):
             #
             # I use the save_entry function to save/create a new entry with the 2 captured variables
             # Applied additionnal styling to the content of the entry
-            util.save_entry(title, f'# {title}\n<hr/>\n{entry}')
+            util.save_entry(title, entry)
             # Redirect me to the entry_page function to display the new created entry
             return redirect('entry_page', entry_title = title)
     # 
@@ -173,12 +173,11 @@ def edit(request, entry_title):
         #
         # If the title of the entry has NOT been changed, save_entry can manage the change
         if old_title == new_title:
-            util.save_entry(new_title, f'# {new_title}\n<hr/>\n{new_content}')
-        #
+            util.save_entry(new_title, new_content)
         # If the title of the entry has changed, save_entry just creates another entry.
         # So first I save the new entry, then I delete the old one.
-        else:
-            util.save_entry(new_title, f'# {new_title}\n<hr/>\n{new_content}')
+        else :
+            util.save_entry(new_title, new_content)
             util.delete_entry(old_title)
         #
         # Render with brand new changes
