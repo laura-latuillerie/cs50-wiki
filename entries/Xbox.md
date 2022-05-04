@@ -1,3 +1,1 @@
-# Xbox
-<hr/>
-Whatever
+Content

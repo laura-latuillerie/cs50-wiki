@@ -1,3 +1,0 @@
-# Yoyo
-<hr/>
-Yoyo

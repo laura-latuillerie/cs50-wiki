@@ -38,17 +38,22 @@ def entry_page(request, entry_title):
     # Fetch the entries list
     entries = util.list_entries()
     #    
-    # Fetch the entry the entry if the entry title exists in the lists of entries  
+    # Fetch the entry content if the entry title exists in the lists of entries  
     if entry_title in entries:
         entry_content = util.get_entry(entry_title)
+    #
+    # Automatically create a heading (h1 + hr) if no heading
+    elif f'# {entry_title}' not in entry_content:
+        entry_content = f'# {entry_title}\n<hr>\n{entry_content}'
     #    
     # If doesn't exist, Get the entries/system/ERROR page
     else :
         entry_content = util.get_error("error")
+    #
     #    
     # 1/ Stock in a var the result of converting your .md file
     # 2/ Create the content of entry page with title and converted file 
-    entry_converted = markdown2.markdown(entry_content)
+    entry_converted = markdown2.markdown(entry_content)  
     content = {
         'entry_title': entry_title,
         'entry_content': entry_converted,
@@ -113,7 +118,6 @@ def search(request):
         k = request.GET['keyword']
         #
         # Calling the entries list
-        # Fetching the entry if the keyword strictly == an entry title in the list
         entries = util.list_entries()
         #
         # s_r stands for search_results
@@ -182,4 +186,3 @@ def edit(request, entry_title):
         #
         # Render with brand new changes
         return redirect("entry_page", entry_title=new_title)
-
