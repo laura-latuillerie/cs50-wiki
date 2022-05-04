@@ -1,1 +1,1 @@
-web: python wiki/manage.py runserver 0.0.0.0:$PORT
+web: gunicorn wiki.wsgi --log-file -
