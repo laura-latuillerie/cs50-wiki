@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+}
+
+body { background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+code {
+    white-space: pre;
+}
+
+h1 {
+    padding-top: 40px;
+}
+
+h2 {
+    margin-top: unset;
+    margin-block-end: 0;
+}
+
+a{
+    text-decoration: none !important;
+}
+
+.row {
+    --bs-gutter-x: 0!important;
+}
+
+.alert {
+    width: 90%;
+    padding:10px;
+    margin-bottom:none;
+}
+
+.list-links {
+    color: #3f5efb;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.list-links:hover{
+    color: #3f5efb;
+}
+
+.main {
+    padding: 20px 0 100px 40px;
+    background-color: #eee;
+}
+
+.search {
+    width: 100%;
+    font-size: 15px;
+    line-height: 30px;
+    border-radius: 5px;
+    border: 0px solid;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.sidebar {
+    background-color : transparent;
+    color : white;
+    height: 100vh;
+    padding: 40px 30px 0px 30px;
+}
+.sidebar img{
+    height: auto;
+    max-width: 80px;
+}
+
+.logo-box{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar h2{
+    text-align: center;
+    font-size: 3rem;
+}
+
+
+nav a{
+    display: block;
+    background-color: #00000026;
+    margin-bottom: 10px;
+    padding : 10px;
+    border-radius: 10px;
+    color : white;
+    text-transform: uppercase;
+    padding-inline-start: 5px;
+}
+
+nav a:hover{
+    color:white;
+}
+
+ul{
+    padding-inline-start: 10px!important; 
+}
+
+.entries-block{
+    width: 95%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 30px 30px; 
+}
+
+.entries{
+    text-align: center;
+    padding : 20px 0;
+    border-radius: 10px;
+    background: #eeeeee;
+    box-shadow:  10px 10px 30px #cacaca,
+                -10px -10px 30px #ffffff;
+}
+
+.entries:hover{
+    background: linear-gradient(145deg, #d6d6d6, #ffffff);
+    box-shadow:  10px 10px 30px #cacaca,
+                -10px -10px 30px #ffffff;
+}
