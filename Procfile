@@ -1,1 +1,1 @@
-web: python wiki-not-pedia/manage.py runserver 0.0.0.0:$PORT
+web: python wiki/manage.py runserver 0.0.0.0:$PORT
